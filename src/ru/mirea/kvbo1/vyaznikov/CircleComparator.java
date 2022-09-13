@@ -1,4 +1,4 @@
-package ru.mirea.kvbo1.vyaznkov;
+package ru.mirea.kvbo1.vyaznikov;
 
 import java.util.Comparator;
 

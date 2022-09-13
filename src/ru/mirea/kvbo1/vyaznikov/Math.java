@@ -1,4 +1,4 @@
-package ru.mirea.kvbo1.vyaznkov;
+package ru.mirea.kvbo1.vyaznikov;
 
 public class Math {
     public static int factorial(int firstNumber) {

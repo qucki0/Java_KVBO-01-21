@@ -1,9 +1,10 @@
-package ru.mirea.kvbo1.vyaznkov;
+package ru.mirea.kvbo1.vyaznikov;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +20,9 @@ public class Main {
         commandLine(args);
         System.out.println("\nArrayList:\n");
         arrayList();
+        System.out.println("\nStack tests:");
+        stackTest();
+
     }
 
     public static void circles() {
@@ -73,10 +77,52 @@ public class Main {
             Circle circle = new Circle(random.nextInt(1, 100), 0, 0, "white");
             circles.add(circle);
         }
-        CircleComparator circleCompar = new CircleComparator();
-        circles.sort(circleCompar);
+        CircleComparator circleCompare = new CircleComparator();
+        circles.sort(circleCompare);
         for (Circle circle : circles) {
             System.out.println(circle);
+        }
+    }
+
+    public static void stackTest() {
+        System.out.println("Test1:");
+        StackInterface stack = new MyStack(3);
+        System.out.println("Empty: " + stack.isEmpty());
+        System.out.println("Full: " + stack.isFull());
+        System.out.println("\nTest2:");
+        try {
+            System.out.println("Trying to get element from empty stack");
+            stack.getTop();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Excepted exception: " + e);
+        }
+        System.out.println("\nTest3:");
+        stack.push(1);
+        System.out.println("Size: " + stack.size() + "\nTop:" + stack.getTop());
+
+        System.out.println("\nTest4:");
+        stack.push(2);
+        stack.push(3);
+        try {
+            stack.push(4);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Trying to get element from empty stack");
+            System.out.println("Excepted exception: " + e);
+        }
+        System.out.println("\nTest5:");
+        System.out.println("Empty: " + stack.isEmpty());
+        System.out.println("Full: " + stack.isFull());
+        System.out.println("\nTest6:");
+        stack.pop();
+        System.out.println("Size: " + stack.size() + "\nTop:" + stack.getTop());
+        System.out.println("\nTest7:");
+        stack.pop();
+        stack.pop();
+        try {
+            stack.pop();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Trying to delete element from empty stack");
+            System.out.println("Excepted exception: " + e);
         }
     }
 }
