@@ -1,4 +1,4 @@
-package ru.mirea.kvbo1.vyaznikov;
+package ru.mirea.kvbo1.vyaznikov.firstlesson;
 
 public class Circle {
     private double radius;
