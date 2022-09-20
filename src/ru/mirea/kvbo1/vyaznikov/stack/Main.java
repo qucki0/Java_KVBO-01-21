@@ -1,10 +1,5 @@
 package ru.mirea.kvbo1.vyaznikov.stack;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
